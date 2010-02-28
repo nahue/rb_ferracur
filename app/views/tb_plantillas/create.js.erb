@@ -1,0 +1,12 @@
+<% if @tb_plantilla.errors.empty? %>
+    //location.href = "<%= tb_plantillas_url%>"
+<% else %>
+    $('#errores').html(function(){
+        var errores = "";
+        <% @tb_plantilla.errors.each_full do |mensaje|%>
+            errores = errores + "<li><%=mensaje%></li>";
+        <% end %>
+        return '<div id="notice"><ul>'+errores+'</ul></div>';
+        //return '<div id="notice"><ul><% @tb_plantilla.errors.each{|attr,msg| puts "#{attr} - #{msg}" } %></ul></div>';
+    });
+<% end %>
