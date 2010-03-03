@@ -6,11 +6,11 @@
 @import partials/base.sass
 @import partials/notificaciones.sass
 @import partials/tablas.sass
-
+@import partials/formularios.sass
 // Import all the default blueprint modules so that we can access their mixins.
 
 // Import the non-default scaffolding module.
-@import blueprint/modules/scaffolding.sass
+//@import blueprint/modules/scaffolding.sass
 // To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
 
 
@@ -21,8 +21,8 @@ html
 //+blueprint
 //Recommended Blueprint configuration with scoping and semantic layout:
 +blueprint-typography
-+blueprint-interaction
-+blueprint-form 
+//+blueprint-interaction
+//+blueprint-form
 
 textarea
   :width auto
@@ -95,46 +95,4 @@ body.vd2
   :width 600px
   :margin 0 auto
     :top 30px
-    
-=formularios
-  :margin 0 auto
-    :top 50px
-  label  
-    :text-align right
-    :display block
-    :float left
-    :width 90px
-    :margin-right 10px
-  input
-    :display block
-    &[type=text], &[type=password]
-      :width 200px
-    &[type=submit]
-      :margin-left 100px
-  select
-    :width 200px
-    :display block
-    :margin-left 150px
-
-    
-form.productos
-  :width 80%
-  +formularios
-form.login
-  :width 340px
-  +formularios
-form.usuarios
-  :width 40%
-  +formularios
-form.plantillas
-  :width 720px
-  +formularios
-  label
-    //:margin-right 10px
-  textarea
-    :display block
-    :margin-left -20px
-
-label.plantilla
-  :margin-right 10px
 

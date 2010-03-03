@@ -10658,3 +10658,2071 @@ Completed in 31ms (View: 23, DB: 0) | 200 OK [http://192.168.3.128/tb_plantillas
 
 Processing Tinymce::HammerController#combine (for 192.168.3.1 at 2010-02-28 13:53:06) [GET]
 Completed in 4ms (View: 0, DB: 0) | 200 OK [http://192.168.3.128/javascripts/tinymce_hammer.js]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-02-28 14:07:26) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 45ms (View: 42, DB: 0) | 200 OK [http://192.168.3.128/]
+  [4;36;1mSQL (2.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (3.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (39.7ms)[0m   [0;1mDROP TABLE "tb_plantillas"[0m
+  [4;35;1mSQL (31.9ms)[0m   [0mCREATE TABLE "tb_plantillas" ("id_plantilla" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pl_codigo" varchar(10), "pl_descripcion" varchar(20), "pl_plantilla" text, "pl_habilitado" boolean) [0m
+  [4;36;1mSQL (7.6ms)[0m   [0;1mCREATE UNIQUE INDEX "pl_codigo" ON "tb_plantillas" ("pl_codigo")[0m
+  [4;35;1mSQL (1.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.9ms)[0m   [0;1mDROP TABLE "usuarios"[0m
+  [4;35;1mSQL (8.8ms)[0m   [0mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (15.1ms)[0m   [0mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "index" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (17.9ms)[0m   [0mCREATE TABLE "grupos_users" ("user_id" integer, "grupo_id" integer) [0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "borrado" integer, "created_at" datetime, "updated_at" datetime, "categoria_id" integer NOT NULL, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime) [0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+Migrating to CreateUsuarios (20100221172423)
+Migrating to CreateTipos (20100228142338)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "tipos" already exists: CREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (24.8ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id_plantilla" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pl_codigo" varchar(10), "pl_descripcion" varchar(20), "pl_plantilla" text, "pl_habilitado" boolean) [0m
+  [4;35;1mSQL (8.5ms)[0m   [0mCREATE UNIQUE INDEX "pl_codigo" ON "tb_plantillas" ("pl_codigo")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.3ms)[0m   [0mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "index" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.2ms)[0m   [0mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.9ms)[0m   [0mCREATE TABLE "grupos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.4ms)[0m   [0mCREATE TABLE "grupos_users" ("user_id" integer, "grupo_id" integer) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "borrado" integer, "created_at" datetime, "updated_at" datetime, "categoria_id" integer NOT NULL, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime) [0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (30.9ms)[0m   [0mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.6ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (6.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100221172423')[0m
+  [4;36;1mSQL (6.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20000127172030')[0m
+  [4;36;1mTipo Load (4.2ms)[0m   [0;1mSELECT * FROM "tipos" [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (49.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (9.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+Migrating to CreateUsuarios (20100221172423)
+Migrating to CreateTipos (20100228142338)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mTipo Create (0.7ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 14:27:38', 'Apiladores', '2010-02-28 14:27:38')[0m
+  [4;35;1mTipo Create (0.4ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 14:27:38', 'Maquinas Viales', '2010-02-28 14:27:38')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mTipo Load (4.2ms)[0m   [0;1mSELECT * FROM "tipos" [0m
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-02-28 14:44:56) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 204ms (View: 191, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-02-28 14:45:01) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 124ms (View: 51, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UsuariosController#new (for 192.168.3.1 at 2010-02-28 14:45:03) [GET]
+Rendering template within layouts/application
+Rendering usuarios/new
+Rendered usuarios/_usuario (32.8ms)
+Completed in 141ms (View: 88, DB: 0) | 200 OK [http://192.168.3.128/usuarios/new]
+
+
+Processing UsuariosController#create (for 192.168.3.1 at 2010-02-28 14:45:14) [POST]
+  Parameters: {"commit"=>"Enviar", "authenticity_token"=>"k66Ezyot6X5W5aApFhdAxlaCaZktX3yXYSAPIA5GQYs=", "usuario"=>{"password_confirmation"=>"nahuelcha", "username"=>"strato1986", "password"=>"nahuelcha", "email"=>"nahuel.chaves@gmail.com"}}
+  [4;36;1mUsuario Load (1.0ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'nahuel.chaves@gmail.com') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.4ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'strato1986') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '4430916d9a53948cc667d4c38b09be6409dbec6f1197b023cb128bb04f197aaa0d0ad898fa1520a319a1553e033d6ed9ddb034f83f61c80b5184ff89e5c2a44d') LIMIT 1[0m
+  [4;35;1mUsuario Create (1.8ms)[0m   [0mINSERT INTO "usuarios" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-02-28 14:45:15', '819a05fca08ec9e123fdc36d610628f9238a8435827fb60c00ae702930053ae9c57f51fa33e45adec6258907cdbc167e3ff7cfc2149d88e4eee23379d8ad49e2', '2010-02-28 14:45:15', 'strato1986', 'jkYC-cONNG3ULZlzAuim', '4430916d9a53948cc667d4c38b09be6409dbec6f1197b023cb128bb04f197aaa0d0ad898fa1520a319a1553e033d6ed9ddb034f83f61c80b5184ff89e5c2a44d', 'nahuel.chaves@gmail.com')[0m
+Redirected to http://192.168.3.128:3000/
+Completed in 428ms (DB: 3) | 302 Found [http://192.168.3.128/usuarios]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-02-28 14:45:16) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 86ms (View: 75, DB: 0) | 200 OK [http://192.168.3.128/]
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+Migrating to CreateUsuarios (20100221172423)
+Migrating to CreateTipos (20100228142338)
+Migrating to CreateCategorias (20100228180851)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorias")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias_tipos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tb_plantillas")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tipos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("usuarios")[0m
+  [4;36;1mTipo Load (1.2ms)[0m   [0;1mSELECT * FROM "tipos" [0m
+  [4;35;1mCategoria Load (0.3ms)[0m   [0mSELECT * FROM "categorias" [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mTipo Load (0.5ms)[0m   [0mSELECT * FROM "tipos" WHERE ("tipos"."id" = 1) [0m
+  [4;36;1mCategoria Load (0.2ms)[0m   [0;1mSELECT * FROM "categorias" INNER JOIN "categorias_tipos" ON "categorias".id = "categorias_tipos".categoria_id WHERE ("categorias_tipos".tipo_id = 1 ) [0m
+  [4;35;1mCategoria Create (1.9ms)[0m   [0mINSERT INTO "categorias" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:19:57', 'Apiladores', '2010-02-28 18:19:57')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "categorias_tipos" ("tipo_id", "categoria_id") VALUES (1, 1)[0m
+  [4;35;1mTipo Load (1.9ms)[0m   [0mSELECT * FROM "tipos" INNER JOIN "categorias_tipos" ON "tipos".id = "categorias_tipos".tipo_id WHERE ("categorias_tipos".categoria_id = 1 ) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (24.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mUsuario Load (1.7ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'nahuel.chaves@gmail.com') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'strato1986') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '4430916d9a53948cc667d4c38b09be6409dbec6f1197b023cb128bb04f197aaa0d0ad898fa1520a319a1553e033d6ed9ddb034f83f61c80b5184ff89e5c2a44d') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mTipo Create (0.2ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:37:16', 'Apiladores', '2010-02-28 18:37:16')[0m
+  [4;35;1mTipo Create (0.1ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:37:16', 'Maquinas Viales', '2010-02-28 18:37:16')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+Migrating to CreateCategorias (20100228180851)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorias")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias_tipos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tb_plantillas")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tipos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("usuarios")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (38.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mUsuario Load (1.7ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'nahuel.chaves@gmail.com') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'strato1986') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '4430916d9a53948cc667d4c38b09be6409dbec6f1197b023cb128bb04f197aaa0d0ad898fa1520a319a1553e033d6ed9ddb034f83f61c80b5184ff89e5c2a44d') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mTipo Create (0.2ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:39:00', 'Apiladores', '2010-02-28 18:39:00')[0m
+  [4;35;1mTipo Create (0.1ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:39:00', 'Maquinas Viales', '2010-02-28 18:39:00')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+Migrating to CreateCategorias (20100228180851)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorias")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias_tipos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tb_plantillas")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tipos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("usuarios")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (13.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mUsuario Load (1.7ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'nahuel.chaves@gmail.com') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'strato1986') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '4430916d9a53948cc667d4c38b09be6409dbec6f1197b023cb128bb04f197aaa0d0ad898fa1520a319a1553e033d6ed9ddb034f83f61c80b5184ff89e5c2a44d') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mTipo Create (0.2ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:39:45', 'Apiladores', '2010-02-28 18:39:45')[0m
+  [4;35;1mTipo Create (0.1ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:39:45', 'Maquinas Viales', '2010-02-28 18:39:45')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+Migrating to CreateCategorias (20100228180851)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorias")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias_tipos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tb_plantillas")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tipos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("usuarios")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (30.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mUsuario Load (1.7ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'nahuel.chaves@gmail.com') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'strato1986') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '4430916d9a53948cc667d4c38b09be6409dbec6f1197b023cb128bb04f197aaa0d0ad898fa1520a319a1553e033d6ed9ddb034f83f61c80b5184ff89e5c2a44d') LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (28.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (30.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mUsuario Load (1.7ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'nahuel.chaves@gmail.com') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'strato1986') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '4430916d9a53948cc667d4c38b09be6409dbec6f1197b023cb128bb04f197aaa0d0ad898fa1520a319a1553e033d6ed9ddb034f83f61c80b5184ff89e5c2a44d') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mTipo Create (0.2ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:50:15', 'Apiladores', '2010-02-28 18:50:15')[0m
+  [4;35;1mTipo Create (0.1ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:50:15', 'Maquinas Viales', '2010-02-28 18:50:15')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+Migrating to CreateCategorias (20100228180851)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+Migrating to CreateProductos (20100228184715)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "categoria_id" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228184715')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorias")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias_tipos")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("productos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+Migrating to CreateUsuarios (20100221172423)
+Migrating to CreateTipos (20100228142338)
+Migrating to CreateCategorias (20100228180851)
+Migrating to CategoriasTipos (20100228181157)
+Migrating to CreateProductos (20100228184715)
+Migrating to Operaciones (20100228185103)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228185103')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorias_tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("operaciones")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("productos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (22.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mTipo Create (0.2ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:55:56', 'Apiladores', '2010-02-28 18:55:56')[0m
+  [4;36;1mTipo Create (0.1ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:55:56', 'Maquinas Viales', '2010-02-28 18:55:56')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+Migrating to CreateCategorias (20100228180851)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+Migrating to CreateProductos (20100228184715)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "categoria_id" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228184715')[0m
+Migrating to CreateOperaciones (20100228185419)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mOperacion Create (0.1ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 18:55:56', '2010-02-28 18:55:56', 'Alquiler')[0m
+  [4;35;1mOperacion Create (0.1ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 18:55:56', '2010-02-28 18:55:56', 'Venta')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228185419')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorias_tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("operaciones")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("productos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (29.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mTipo Create (0.2ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:58:09', 'Apiladores', '2010-02-28 18:58:09')[0m
+  [4;36;1mTipo Create (0.1ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 18:58:09', 'Maquinas Viales', '2010-02-28 18:58:09')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+Migrating to CreateCategorias (20100228180851)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+Migrating to CreateProductos (20100228184715)
+  [4;35;1mSQL (5.1ms)[0m   [0mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228184715')[0m
+Migrating to CreateOperaciones (20100228185419)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mOperacion Create (0.1ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 18:58:09', '2010-02-28 18:58:09', 'Alquiler')[0m
+  [4;35;1mOperacion Create (0.1ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 18:58:09', '2010-02-28 18:58:09', 'Venta')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228185419')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorias_tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("operaciones")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("productos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mOperacion Load (0.5ms)[0m   [0;1mSELECT * FROM "operaciones" WHERE ("operaciones"."id" = 1) [0m
+  [4;36;1mOperacion Load (0.3ms)[0m   [0;1mSELECT * FROM "operaciones" WHERE ("operaciones"."id" = 1) [0m
+  [4;35;1mProducto Load (0.8ms)[0m   [0mSELECT * FROM "productos" WHERE ("productos".operacion_id = 1) [0m
+  [4;36;1mProducto Create (3.3ms)[0m   [0;1mINSERT INTO "productos" ("detalle", "imagen", "created_at", "habilitado", "imagen_content_type", "updated_at", "precio", "imagen_file_name", "imagen_file_size", "imagen_updated_at", "operacion_id", "modelo", "categoria_id") VALUES(NULL, NULL, '2010-02-28 19:00:37', NULL, NULL, '2010-02-28 19:00:37', NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+  [4;35;1mProducto Update (0.5ms)[0m   [0mUPDATE "productos" SET "updated_at" = '2010-02-28 19:00:43', "operacion_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("categorias_tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("operaciones")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("productos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (38.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (10.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mTipo Create (0.2ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 19:06:34', 'Apiladores', '2010-02-28 19:06:34')[0m
+  [4;36;1mTipo Create (0.1ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 19:06:34', 'Maquinas Viales', '2010-02-28 19:06:34')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+Migrating to CreateCategorias (20100228180851)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+Migrating to CreateProductos (20100228184715)
+  [4;35;1mSQL (5.2ms)[0m   [0mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228184715')[0m
+Migrating to CreateOperaciones (20100228185419)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228185419')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("categorias")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("categorias_tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("operaciones")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("productos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (23.7ms)[0m   [0;1mDROP TABLE "categorias"[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mDROP TABLE "categorias_tipos"[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mDROP TABLE "operaciones"[0m
+  [4;35;1mSQL (594.9ms)[0m   [0mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mDROP TABLE "productos"[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mDROP TABLE "tb_plantillas"[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (7.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mDROP TABLE "tipos"[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mDROP TABLE "usuarios"[0m
+  [4;35;1mSQL (39.1ms)[0m   [0mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mOperacion Create (0.4ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 19:06:52', '2010-02-28 19:06:52', 'Alquiler')[0m
+  [4;35;1mOperacion Create (0.4ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 19:06:52', '2010-02-28 19:06:52', 'Venta')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (74.4ms)[0m   [0;1mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (13.1ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (44.5ms)[0m   [0;1mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (18.5ms)[0m   [0;1mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (14.8ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (71.1ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (14.2ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (7.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228185419')[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100221172423')[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20000127172030')[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100228142338')[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228181157')[0m
+  [4;35;1mSQL (11.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100228180851')[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228184715')[0m
+  [4;35;1mOperacion Create (0.3ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 19:07:22', '2010-02-28 19:07:22', 'Alquiler')[0m
+  [4;36;1mOperacion Create (0.2ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 19:07:22', '2010-02-28 19:07:22', 'Venta')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (37.9ms)[0m   [0;1mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (9.2ms)[0m   [0;1mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (8.7ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (8.8ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (10.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (7.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228185419')[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100221172423')[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20000127172030')[0m
+  [4;35;1mSQL (7.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100228142338')[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228181157')[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100228180851')[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228184715')[0m
+  [4;35;1mOperacion Create (0.3ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 19:08:31', '2010-02-28 19:08:31', 'Alquiler')[0m
+  [4;36;1mOperacion Create (0.2ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-02-28 19:08:31', '2010-02-28 19:08:31', 'Venta')[0m
+  [4;35;1mTipo Create (0.2ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 19:08:31', 'Apiladores', '2010-02-28 19:08:31')[0m
+  [4;36;1mTipo Create (0.2ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-02-28 19:08:31', 'Maquinas Viales', '2010-02-28 19:08:31')[0m
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'nahuel.chaves@gmail.com') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'strato1986') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '4430916d9a53948cc667d4c38b09be6409dbec6f1197b023cb128bb04f197aaa0d0ad898fa1520a319a1553e033d6ed9ddb034f83f61c80b5184ff89e5c2a44d') LIMIT 1[0m
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-01 21:02:22) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 280ms (View: 269, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing TbPlantillasController#new (for 192.168.3.1 at 2010-03-01 21:02:26) [GET]
+Rendering template within layouts/application
+Rendering tb_plantillas/new
+
+ActionView::TemplateError (undefined method `pl_codigo' for #<TbPlantilla id: nil, created_at: nil, updated_at: nil>) on line #14 of app/views/tb_plantillas/_tb_plantilla.html.erb:
+11:     <div id="errores"></div>
+12:     <p>
+13:       <%= f.label :pl_codigo, "Codigo"%>
+14:       <%= f.text_field :pl_codigo, :class => "text"%>
+15:     </p>
+16:     <p>
+17:       <%= f.label :pl_descripcion, "Descripcion"%>
+
+    app/views/tb_plantillas/_tb_plantilla.html.erb:14
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    app/views/tb_plantillas/_tb_plantilla.html.erb:10
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/tb_plantillas/new.html.erb:1
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (264.0ms)
+Rendered rescues/_request_and_response (5.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:02:31) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 131ms (View: 55, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UsuariosController#new (for 192.168.3.1 at 2010-03-01 21:02:34) [GET]
+Rendering template within layouts/application
+Rendering usuarios/new
+Rendered usuarios/_usuario (28.3ms)
+Completed in 146ms (View: 88, DB: 0) | 200 OK [http://192.168.3.128/usuarios/new]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-01 21:04:13) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+
+ActionView::TemplateError (undefined local variable or method `formtastic_stylesheet_link_tag' for #<ActionView::Base:0xb4f8f9e4>) on line #10 of app/views/layouts/application.html.erb:
+7: 			<!--/[if IE]-->
+8: 		<%=stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'%>
+9: 
+10:         <%= formtastic_stylesheet_link_tag %>
+11: 
+12: 		<%=stylesheet_link_tag "menu_style.css" %>
+13:         <%=javascript_include_tag "jquery-1.4.2.min.js"%>
+
+    app/views/layouts/application.html.erb:10
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (191.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-01 21:04:58) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+
+ActionView::TemplateError (undefined local variable or method `formtastic_stylesheet_link_tag' for #<ActionView::Base:0xb73d68e8>) on line #10 of app/views/layouts/application.html.erb:
+7: 			<!--/[if IE]-->
+8: 		<%=stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'%>
+9: 
+10:         <%= formtastic_stylesheet_link_tag %>
+11: 
+12: 		<%=stylesheet_link_tag "menu_style.css" %>
+13:         <%=javascript_include_tag "jquery-1.4.2.min.js"%>
+
+    app/views/layouts/application.html.erb:10
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (234.9ms)
+Rendered rescues/_request_and_response (6.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-01 21:07:09) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+
+ActionView::TemplateError (undefined local variable or method `formtastic_stylesheet_link_tag' for #<ActionView::Base:0xb7241e38>) on line #10 of app/views/layouts/application.html.erb:
+7: 			<!--/[if IE]-->
+8: 		<%=stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'%>
+9: 
+10:         <%= formtastic_stylesheet_link_tag %>
+11: 
+12: 		<%=stylesheet_link_tag "menu_style.css" %>
+13:         <%=javascript_include_tag "jquery-1.4.2.min.js"%>
+
+    app/views/layouts/application.html.erb:10
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (191.4ms)
+Rendered rescues/_request_and_response (6.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-01 21:13:47) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 414ms (View: 401, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:14:34) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 117ms (View: 50, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:16:04) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 306ms (View: 52, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:17:01) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+ERROR: compiling _run_erb_app47views47user_sessions47new46html46erb RAISED compile error
+/opt/bitnami/projects/rb_ferracur/app/views/user_sessions/new.html.erb:30: syntax error, unexpected ')'
+...rm_for @user_session do |f|  ).to_s); @output_buffer.concat ...
+                              ^
+/opt/bitnami/projects/rb_ferracur/app/views/user_sessions/new.html.erb:37: syntax error, unexpected kENSURE, expecting ')'
+/opt/bitnami/projects/rb_ferracur/app/views/user_sessions/new.html.erb:39: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47user_sessions47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n\n"
+
+;  content_for :head do ; @output_buffer.concat "\n\n    "
+
+;  javascript_tag do ; @output_buffer.concat "\n    $(document).ready(function (){\n        $(\"#user_session\").submitWithAjax();\n    });\n    "
+
+
+
+;  end ; @output_buffer.concat "\n"
+;  end ; @output_buffer.concat "\n\n\n<!--"
+
+
+;  form_for @user_session, :html => {:class => "login", :id => "user_session"} do |form| ; @output_buffer.concat "\n    <div id=\"errores\"></div>\n\n      <p>\n        "
+
+
+
+; @output_buffer.concat(( form.label :username, "Usuario: " ).to_s); @output_buffer.concat "\n        "
+; @output_buffer.concat(( form.text_field :username, :class => "text" ).to_s); @output_buffer.concat "\n      </p>\n      <p>\n        "
+
+
+; @output_buffer.concat(( form.label :password, "Contraseña: " ).to_s); @output_buffer.concat "\n        "
+; @output_buffer.concat(( form.password_field :password, :class => "text" ).to_s); @output_buffer.concat "\n      </p>\n      <p>\n        "
+
+
+; @output_buffer.concat(( form.submit "Enviar" ).to_s); @output_buffer.concat "\n      </p>\n\n"
+
+
+;  end ; @output_buffer.concat "\n    -->\n"
+
+; @output_buffer.concat(( semantic_form_for @user_session do |f|  ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( f.inputs ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( f.buttons ).to_s); @output_buffer.concat "\n\n\n\n"
+
+
+
+;  end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /opt/bitnami/projects/rb_ferracur/app/views/user_sessions/new.html.erb:39:in `compile!'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render_without_haml'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/haml-2.2.20/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render_without_haml'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/haml-2.2.20/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/haml-2.2.20/lib/sass/plugin/rails.rb:20:in `process_without_compass'
+/opt/bitnami/projects/rb_ferracur/vendor/gems/compass-0.8.17/lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/bitnami/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/bitnami/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/opt/bitnami/projects/rb_ferracur/app/views/user_sessions/new.html.erb:30: syntax error, unexpected ')'
+...rm_for @user_session do |f|  ).to_s); @output_buffer.concat ...
+                              ^
+/opt/bitnami/projects/rb_ferracur/app/views/user_sessions/new.html.erb:37: syntax error, unexpected kENSURE, expecting ')'
+/opt/bitnami/projects/rb_ferracur/app/views/user_sessions/new.html.erb:39: syntax error, unexpected kEND, expecting ')') on line #30 of app/views/user_sessions/new.html.erb:
+27: 
+28: <% end %>
+29:     -->
+30: <%= semantic_form_for @user_session do |f|  %>
+31:     <%= f.inputs %>
+32:     <%= f.buttons %>
+33: 
+
+    app/views/user_sessions/new.html.erb:39:in `compile!'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (381.3ms)
+Rendered rescues/_request_and_response (5.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:17:25) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `reflections' for UserSession:Class) on line #31 of app/views/user_sessions/new.html.erb:
+28: <% end %>
+29:     -->
+30: <% semantic_form_for @user_session do |f|  %>
+31:     <%= f.inputs %>
+32:     <%= f.buttons %>
+33: 
+34: 
+
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:469:in `association_columns'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:263:in `inputs'
+    app/views/user_sessions/new.html.erb:31
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1723:in `semantic_form_for'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1701:in `with_custom_field_error_proc'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1722:in `semantic_form_for'
+    app/views/user_sessions/new.html.erb:30
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (199.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:19:27) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 165ms (View: 89, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:20:29) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 143ms (View: 72, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:20:58) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 166ms (View: 87, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:21:00) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 330ms (View: 66, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:21:00) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 133ms (View: 59, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:21:01) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 136ms (View: 59, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:24:09) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 421ms (View: 349, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UsuariosController#new (for 192.168.3.1 at 2010-03-01 21:24:34) [GET]
+Rendering template within layouts/application
+Rendering usuarios/new
+Rendered usuarios/_usuario (32.7ms)
+Completed in 156ms (View: 93, DB: 0) | 200 OK [http://192.168.3.128/usuarios/new]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-01 21:24:38) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 141ms (View: 59, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 20:59:24) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 646ms (View: 634, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 20:59:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TbPlantillasController#new (for 192.168.3.1 at 2010-03-02 21:00:17) [GET]
+Rendering template within layouts/application
+Rendering tb_plantillas/new
+
+ActionView::TemplateError (undefined method `pl_codigo' for #<TbPlantilla id: nil, created_at: nil, updated_at: nil>) on line #14 of app/views/tb_plantillas/_tb_plantilla.html.erb:
+11:     <div id="errores"></div>
+12:     <p>
+13:       <%= f.label :pl_codigo, "Codigo"%>
+14:       <%= f.text_field :pl_codigo, :class => "text"%>
+15:     </p>
+16:     <p>
+17:       <%= f.label :pl_descripcion, "Descripcion"%>
+
+    app/views/tb_plantillas/_tb_plantilla.html.erb:14
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    app/views/tb_plantillas/_tb_plantilla.html.erb:10
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/tb_plantillas/new.html.erb:1
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (285.2ms)
+Rendered rescues/_request_and_response (6.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:00:25) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 171ms (View: 98, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:00:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:04:45) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 136ms (View: 62, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:04:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:04:57) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 140ms (View: 59, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:04:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:05:00) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 139ms (View: 60, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:05:01) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 134ms (View: 59, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:05:02) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 141ms (View: 65, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:05:02) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 134ms (View: 61, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:05:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:05:58) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 141ms (View: 61, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:05:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:08:32) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 166ms (View: 88, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:08:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:17:25) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 134ms (View: 58, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:17:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:17:57) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 125ms (View: 55, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:17:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:20:33) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 166ms (View: 74, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:20:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:20:46) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 125ms (View: 55, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:20:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:20:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:21:14) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 131ms (View: 61, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:21:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:22:21) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 137ms (View: 59, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:22:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:22:37) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 138ms (View: 58, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:22:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:23:24) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 161ms (View: 70, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:23:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:23:52) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 138ms (View: 59, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:23:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:24:02) [POST]
+  Parameters: {"commit"=>"Create UserSession (or whatever name you are using)", "user_session"=>{"username"=>"nchavez", "password"=>"nchavedz"}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+  [4;36;1mUsuario Load (2.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'nchavez') LIMIT 1[0m
+Redirected to http://192.168.3.128:3000/
+Completed in 584ms (DB: 3) | 302 Found [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:24:03) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 99ms (View: 88, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:24:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:24:10) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 90ms (View: 79, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:24:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:24:16) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 126ms (View: 54, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:24:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:24:19) [POST]
+  Parameters: {"commit"=>"Create UserSession (or whatever name you are using)", "user_session"=>{"username"=>"", "password"=>"asdasd"}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+Redirected to http://192.168.3.128:3000/
+Completed in 94ms (DB: 0) | 302 Found [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:24:20) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 85ms (View: 75, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:24:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#new (for 192.168.3.1 at 2010-03-02 21:24:45) [GET]
+Rendering template within layouts/application
+Rendering usuarios/new
+Rendered usuarios/_usuario (28.8ms)
+Completed in 151ms (View: 88, DB: 0) | 200 OK [http://192.168.3.128/usuarios/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:24:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#create (for 192.168.3.1 at 2010-03-02 21:24:54) [POST]
+  Parameters: {"commit"=>"Enviar", "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA=", "usuario"=>{"password_confirmation"=>"nchavez", "username"=>"nchavez", "password"=>"nchavez", "email"=>"asd"}}
+  [4;35;1mUsuario Load (0.6ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'asd') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'nchavez') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.6ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '705e5a952a00f2ecb67fd23bb1ecfbb5394bacc3972cfc31cbfe643d4fa93452a45207e5aaacf1fbeb4076845b648ad47ab3a7ee6ea9b4f90d422fbb79145427') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering usuarios/new
+Rendered usuarios/_usuario (47.1ms)
+Completed in 216ms (View: 83, DB: 2) | 200 OK [http://192.168.3.128/usuarios]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:24:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#create (for 192.168.3.1 at 2010-03-02 21:25:02) [POST]
+  Parameters: {"commit"=>"Enviar", "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA=", "usuario"=>{"password_confirmation"=>"nchavez", "username"=>"nchavez", "password"=>"nchavez", "email"=>"asd@sda.com"}}
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'asd@sda.com') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.4ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'nchavez') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.4ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '717db1ba58ae9646cd57ecaabb8c81a88ea4d7aac0aae157ab3d7cd4b5d2b8a95cbd3907a67c8b2d682cd7e46c51381e813ef4b1f1f37c60398da5f9c228094d') LIMIT 1[0m
+  [4;35;1mUsuario Create (69.8ms)[0m   [0mINSERT INTO "usuarios" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-03-02 21:25:02', '5407c0bfdc9d1a14b241e22bca9c358468f4f070bd282df7eeaeb50142117c7f04921c36c818687af86a196acdccf944ebdf769abb5930ba835dad3bd5e66178', '2010-03-02 21:25:02', 'nchavez', 'zEe6gIsMTnd-il0j8jDU', '717db1ba58ae9646cd57ecaabb8c81a88ea4d7aac0aae157ab3d7cd4b5d2b8a95cbd3907a67c8b2d682cd7e46c51381e813ef4b1f1f37c60398da5f9c228094d', 'asd@sda.com')[0m
+Redirected to http://192.168.3.128:3000/
+Completed in 530ms (DB: 71) | 302 Found [http://192.168.3.128/usuarios]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:25:04) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 111ms (View: 100, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:25:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:25:29) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 135ms (View: 58, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:25:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:25:34) [POST]
+  Parameters: {"commit"=>"Create UserSession (or whatever name you are using)", "user_session"=>{"username"=>"nchavez", "password"=>"nchavez"}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+  [4;36;1mUsuario Load (1.9ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'nchavez') LIMIT 1[0m
+Redirected to http://192.168.3.128:3000/
+Completed in 302ms (DB: 2) | 302 Found [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:25:35) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;35;1mUsuario Load (2.1ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 110ms (View: 95, DB: 2) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:25:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#destroy (for 192.168.3.1 at 2010-03-02 21:25:39) [GET]
+  [4;36;1mUsuario Load (1.8ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Redirected to http://192.168.3.128:3000/
+Completed in 96ms (DB: 2) | 302 Found [http://192.168.3.128/logout]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:25:40) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 88ms (View: 77, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:25:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:25:43) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 127ms (View: 57, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:25:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:25:46) [POST]
+  Parameters: {"commit"=>"Create UserSession (or whatever name you are using)", "user_session"=>{"username"=>"asd", "password"=>""}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+Redirected to http://192.168.3.128:3000/
+Completed in 83ms (DB: 0) | 302 Found [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:25:46) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 93ms (View: 80, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:25:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:29:43) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 145ms (View: 65, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:29:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:30:01) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 167ms (View: 84, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:30:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:30:04) [POST]
+  Parameters: {"user_session"=>{"username"=>"asdasd", "password"=>""}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+Rendering user_sessions/create
+Completed in 145ms (View: 47, DB: 0) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:30:09) [POST]
+  Parameters: {"user_session"=>{"username"=>"asdasd", "password"=>""}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+Rendering user_sessions/create
+Completed in 149ms (View: 54, DB: 0) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:30:22) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 169ms (View: 87, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:30:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:30:25) [POST]
+  Parameters: {"user_session"=>{"username"=>"asdasd", "password"=>""}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+Rendering user_sessions/create
+Completed in 103ms (View: 17, DB: 0) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:30:28) [POST]
+  Parameters: {"user_session"=>{"username"=>"asdasd", "password"=>""}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+Rendering user_sessions/create
+Completed in 107ms (View: 14, DB: 0) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:41:00) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 157ms (View: 68, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:41:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:41:04) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 141ms (View: 62, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:41:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:41:12) [POST]
+  Parameters: {"user_session"=>{"username"=>"asdasd", "password"=>""}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+Rendering user_sessions/create
+Completed in 113ms (View: 13, DB: 0) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:41:15) [POST]
+  Parameters: {"user_session"=>{"username"=>"asdasd", "password"=>"sd"}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+  [4;35;1mUsuario Load (0.8ms)[0m   [0mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'asdasd') LIMIT 1[0m
+Rendering user_sessions/create
+Completed in 111ms (View: 18, DB: 1) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:41:20) [POST]
+  Parameters: {"user_session"=>{"username"=>"nchavez", "password"=>"sd"}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+  [4;36;1mUsuario Load (1.7ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'nchavez') LIMIT 1[0m
+Rendering user_sessions/create
+Completed in 308ms (View: 17, DB: 2) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:41:24) [POST]
+  Parameters: {"user_session"=>{"username"=>"nchavez", "password"=>"nchavez"}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+  [4;35;1mUsuario Load (2.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'nchavez') LIMIT 1[0m
+Rendering user_sessions/create
+Completed in 120ms (View: 2, DB: 2) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:41:25) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;36;1mUsuario Load (2.0ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 119ms (View: 105, DB: 2) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:41:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#destroy (for 192.168.3.1 at 2010-03-02 21:48:06) [GET]
+  [4;35;1mUsuario Load (1.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Redirected to http://192.168.3.128:3000/
+Completed in 97ms (DB: 1) | 302 Found [http://192.168.3.128/logout]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:48:06) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 355ms (View: 344, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:48:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:48:11) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 138ms (View: 61, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:48:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:48:13) [POST]
+  Parameters: {"user_session"=>{"username"=>"", "password"=>""}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+Rendering user_sessions/create
+Completed in 113ms (View: 20, DB: 0) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:48:20) [POST]
+  Parameters: {"user_session"=>{"username"=>"nchavez", "password"=>"nchavez"}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+  [4;36;1mUsuario Load (1.9ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'nchavez') LIMIT 1[0m
+Rendering user_sessions/create
+Completed in 295ms (View: 2, DB: 2) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:48:21) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;35;1mUsuario Load (1.4ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 126ms (View: 113, DB: 1) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:48:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:48:32) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;36;1mUsuario Load (1.5ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 148ms (View: 132, DB: 2) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:48:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#destroy (for 192.168.3.1 at 2010-03-02 21:48:35) [GET]
+  [4;35;1mUsuario Load (2.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Redirected to http://192.168.3.128:3000/
+Completed in 100ms (DB: 2) | 302 Found [http://192.168.3.128/logout]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:48:36) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 96ms (View: 84, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:48:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:48:52) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 118ms (View: 104, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:48:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-02 21:48:55) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 156ms (View: 73, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:48:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-02 21:48:59) [POST]
+  Parameters: {"user_session"=>{"username"=>"nchavez", "password"=>"nchavez"}, "authenticity_token"=>"oBruv/n7tQ0jTdXjxWHO8akT4R0Di0BGWAWv10fXMvA="}
+  [4;36;1mUsuario Load (1.5ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'nchavez') LIMIT 1[0m
+Rendering user_sessions/create
+Completed in 319ms (View: 2, DB: 2) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:49:01) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;35;1mUsuario Load (1.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 106ms (View: 92, DB: 1) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:49:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-02 21:49:03) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;36;1mUsuario Load (2.4ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 123ms (View: 104, DB: 2) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-02 21:49:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TbPlantillasController#new (for 192.168.3.1 at 2010-03-02 21:49:07) [GET]
+Rendering template within layouts/application
+Rendering tb_plantillas/new
+
+ActionView::TemplateError (undefined method `pl_codigo' for #<TbPlantilla id: nil, created_at: nil, updated_at: nil>) on line #14 of app/views/tb_plantillas/_tb_plantilla.html.erb:
+11:     <div id="errores"></div>
+12:     <p>
+13:       <%= f.label :pl_codigo, "Codigo"%>
+14:       <%= f.text_field :pl_codigo, :class => "text"%>
+15:     </p>
+16:     <p>
+17:       <%= f.label :pl_descripcion, "Descripcion"%>
+
+    app/views/tb_plantillas/_tb_plantilla.html.erb:14
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    app/views/tb_plantillas/_tb_plantilla.html.erb:10
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/tb_plantillas/new.html.erb:1
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (275.1ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)

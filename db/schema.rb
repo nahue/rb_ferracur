@@ -9,36 +9,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100221172423) do
+ActiveRecord::Schema.define(:version => 20100228185419) do
 
-  create_table "tb_doctipos", :id => false, :force => true do |t|
-    t.integer "id_doctipo"
-    t.string  "ds_descripcion", :limit => 20
-    t.boolean "ds_habilitado"
+  create_table "categorias", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "tb_documentos", :primary_key => "id_documento", :force => true do |t|
-    t.integer "id_doctipo"
-    t.integer "id_area"
-    t.integer "id_usuariocreacion"
-    t.integer "id_usuariofirma"
-    t.integer "id_docprioridad"
-    t.integer "id_docprivacidad"
-    t.string  "doc_descripcion",    :limit => 20
-    t.binary  "doc_adjunto"
-    t.text    "doc_contenido"
-    t.boolean "doc_habilitado"
-    t.integer "id_docvisibilidad"
+  create_table "categorias_tipos", :id => false, :force => true do |t|
+    t.integer "categoria_id", :null => false
+    t.integer "tipo_id",      :null => false
   end
 
-  create_table "tb_plantillas", :primary_key => "id_plantilla", :force => true do |t|
-    t.string  "pl_codigo",      :limit => 10
-    t.string  "pl_descripcion", :limit => 20
-    t.text    "pl_plantilla"
-    t.boolean "pl_habilitado"
+  create_table "operaciones", :force => true do |t|
+    t.string   "op_nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "tb_plantillas", ["pl_codigo"], :name => "pl_codigo", :unique => true
+  create_table "productos", :force => true do |t|
+    t.integer  "categoria_id"
+    t.integer  "operacion_id"
+    t.string   "modelo"
+    t.text     "detalle"
+    t.integer  "precio"
+    t.string   "imagen"
+    t.integer  "habilitado"
+    t.string   "imagen_file_name"
+    t.string   "imagen_content_type"
+    t.integer  "imagen_file_size"
+    t.datetime "imagen_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tb_plantillas", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipos", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "usuarios", :force => true do |t|
     t.string   "username"

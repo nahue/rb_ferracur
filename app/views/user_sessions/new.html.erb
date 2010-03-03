@@ -4,13 +4,13 @@
 
     <% javascript_tag do %>
     $(document).ready(function (){
-        $("#user_session").submitWithAjax();
+        $("#new_user_session").submitWithAjax();
     });
     <% end %>
 <% end %>
 
 
-<% form_for @user_session, :html => {:class => "login", :id => "user_session"} do |form| %>
+<!--<% form_for @user_session, :html => {:class => "login", :id => "user_session"} do |form| %>
     <div id="errores"></div>
 
       <p>
@@ -24,5 +24,14 @@
       <p>
         <%= form.submit "Enviar" %>
       </p>
+
+<% end %>
+    -->
+<div id="errores"></div>
+<% semantic_form_for @user_session do |f|  %>
+    <%= f.inputs :username, :password %>
+    <%= f.buttons %>
+
+
 
 <% end %>

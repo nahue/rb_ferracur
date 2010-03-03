@@ -8,6 +8,7 @@ class CreateUsuarios < ActiveRecord::Migration
       t.string :persistence_token
       t.timestamps
     end
+    
   end
 
   def self.down

@@ -5,3 +5,7 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+Operacion.create(:op_nombre => "Alquiler")
+Operacion.create(:op_nombre => "Venta")
+Tipo.create(:nombre => "Apiladores")
+Tipo.create(:nombre => "Maquinas Viales")

@@ -1,11 +1,14 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<%=stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'%>
         <%=stylesheet_link_tag 'compiled/iconos.css', :media => 'screen, projection'%>
 		<%= stylesheet_link_tag 'compiled/print.css', :media => 'print'%>
 			<!--/[if IE]-->
 		<%=stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'%>
+
+
+
 		<%=stylesheet_link_tag "menu_style.css" %>
         <%=javascript_include_tag "jquery-1.4.2.min.js"%>
         <%=javascript_include_tag "jquery.tools.min.js"%>
@@ -13,7 +16,7 @@
         <%= init_tinymce_hammer_if_required %>
       
         <%= yield :head %>
-
+        <%= stylesheet_link_tag 'formtastic', 'formtastic-changes', :cache => 'formularios' %>  
 	</head>
     <body class="vd2">
 				
@@ -54,6 +57,7 @@
 		</div>
 			<% [:error, :warning, :notice, :message, :success].each do |key| %>
 				<%= content_tag :div, flash.now[key], :id => key if flash.now[key] %>
+
 			<% end %>
             <div class="apple_overlay" id="overlay"> 
 
@@ -62,6 +66,7 @@
 
             </div>
 		    <%= yield %>
+              <% flash.discard %>
 			</div>
 		</div>
     </body>
