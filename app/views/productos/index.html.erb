@@ -1,0 +1,46 @@
+<%= will_paginate @productos %>
+<%= page_entries_info @productos, :entry_name => 'Productos' %>
+
+  <!-- Table markup-->
+
+  <table id="box-table-a">
+
+  <!-- Table header -->
+
+      <thead>
+          <tr>
+              <th scope="col" id="">Id</th>
+              <th scope="col" id="">Modelo</th>
+              <th scope="col" id="">Precio</th>
+          </tr>
+      </thead>
+
+  <!-- Table footer -->
+
+      <tfoot>
+
+          <tr>
+              <td></td>
+              <td></td>
+              <td>Total: <%= Producto.count %></td>
+          </tr>
+
+      </tfoot>
+
+  <!-- Table body -->
+
+      <tbody>
+           <% for producto in @productos -%>
+          <tr>
+              <td><%= producto.id %></td>
+              <td><%= producto.modelo %></td>
+              <td><%= producto.precio%></td>
+              <td>
+                  <a href="<%= edit_producto_url(producto.id)%>"><div class="page_edit"></div></a>
+                  <% link_to producto, :method => :delete do%> <div class="delete"></div><% end %>
+              </td>
+          </tr>
+          <% end -%>
+      </tbody>
+
+  </table>

@@ -1,0 +1,53 @@
+@import base.sass
+
+
+=formularios
+  :margin 0 auto
+    :top 50px
+=begin
+  label
+    :text-align right
+    :display block
+    :float left
+    :width 90px
+    :margin-right 10px
+  input
+    :display block
+    &[type=text], &[type=password]
+      :width 200px
+    &[type=submit]
+      :margin-left 100px
+  select
+    :width 200px
+    :display block
+    :margin-left 150px
+=end
+
+form.productos
+  :width 80%
+  +formularios
+form
+  :text-align left
+  &#new_user_session
+    :width 340px
+    +formularios
+  &#form_usuarios
+    :width 340px
+    +formularios
+  &#form_productos
+    :width 500px
+    +formularios
+form.usuarios
+  :width 40%
+  +formularios
+form.plantillas
+  :width 720px
+  +formularios
+  label
+    //:margin-right 10px
+  textarea
+    :display block
+    :margin-left -20px
+
+label.plantilla
+  :margin-right 10px

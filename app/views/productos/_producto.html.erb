@@ -1,0 +1,10 @@
+<% semantic_form_for @producto, :html => {:id => "form_productos",:multipart => true} do |f| %>
+    <%f.inputs do %>
+
+        <%= f.input :categoria, :include_blank => false %>
+        <%= f.input :modelo %>
+        <%= f.input :precio, :input_html => {:size => 20, :style => "width:auto;"}%>
+        <%= f.input :imagen, :as => :file %>
+    <% end %>
+    <%= f.buttons %>
+<% end %>
