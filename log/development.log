@@ -12726,3 +12726,1792 @@ ActionView::TemplateError (undefined method `pl_codigo' for #<TbPlantilla id: ni
 Rendered rescues/_trace (275.1ms)
 Rendered rescues/_request_and_response (1.0ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-03 22:28:56) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 609ms (View: 598, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 22:28:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-03 22:31:24) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 111ms (View: 100, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 22:31:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-03 22:31:27) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 132ms (View: 67, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 22:31:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-03 22:31:36) [POST]
+  Parameters: {"user_session"=>{"username"=>"strato1986", "password"=>"nahuelcha"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+  [4;36;1mUsuario Load (1.3ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'strato1986') LIMIT 1[0m
+Rendering user_sessions/create
+Completed in 515ms (View: 27, DB: 1) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-03 22:31:42) [POST]
+  Parameters: {"user_session"=>{"username"=>"nchavez", "password"=>"nchavez"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+  [4;35;1mUsuario Load (2.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'nchavez') LIMIT 1[0m
+Rendering user_sessions/create
+Completed in 116ms (View: 2, DB: 2) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-03 22:31:42) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;36;1mUsuario Load (1.8ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 299ms (View: 285, DB: 2) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 22:31:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TbPlantillasController#index (for 192.168.3.1 at 2010-03-03 22:31:47) [GET]
+  [4;35;1mTbPlantilla Load (1.7ms)[0m   [0mSELECT * FROM "tb_plantillas" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering tb_plantillas/index
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "tb_plantillas" [0m
+  [4;35;1mUsuario Load (1.8ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 163ms (View: 133, DB: 5) | 200 OK [http://192.168.3.128/tb_plantillas]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 22:31:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mTipo Load (1.2ms)[0m   [0;1mSELECT * FROM "tipos" WHERE ("tipos"."id" = 1) [0m
+  [4;35;1mCategoria Load (0.9ms)[0m   [0mSELECT * FROM "categorias" INNER JOIN "categorias_tipos" ON "categorias".id = "categorias_tipos".categoria_id WHERE ("categorias_tipos".tipo_id = 1 ) [0m
+  [4;36;1mOperacion Create (1.7ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:48:19', '2010-03-03 22:48:19', 'Alquiler')[0m
+  [4;35;1mOperacion Create (0.8ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:48:19', '2010-03-03 22:48:19', 'Venta')[0m
+  [4;36;1mTipo Create (0.8ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:48:19', 'Apiladores', '2010-03-03 22:48:19')[0m
+  [4;35;1mTipo Create (0.7ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:48:19', 'Maquinas Viales', '2010-03-03 22:48:19')[0m
+  [4;36;1mCategoria Create (0.8ms)[0m   [0;1mINSERT INTO "categorias" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:48:19', 'Apiladores Electricos', '2010-03-03 22:48:19')[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (5.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (10.6ms)[0m   [0;1mDROP TABLE "categorias"[0m
+  [4;35;1mSQL (6.6ms)[0m   [0mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mDROP TABLE "categorias_tipos"[0m
+  [4;36;1mSQL (6.1ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mDROP TABLE "operaciones"[0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.9ms)[0m   [0mDROP TABLE "productos"[0m
+  [4;36;1mSQL (5.8ms)[0m   [0;1mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.3ms)[0m   [0;1mDROP TABLE "tb_plantillas"[0m
+  [4;35;1mSQL (12.8ms)[0m   [0mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mDROP TABLE "tipos"[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.4ms)[0m   [0;1mDROP TABLE "usuarios"[0m
+  [4;35;1mSQL (6.6ms)[0m   [0mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mOperacion Create (0.9ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:48:52', '2010-03-03 22:48:52', 'Alquiler')[0m
+  [4;35;1mOperacion Create (0.7ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:48:52', '2010-03-03 22:48:52', 'Venta')[0m
+  [4;36;1mTipo Create (0.8ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:48:52', 'Apiladores', '2010-03-03 22:48:52')[0m
+  [4;35;1mTipo Create (0.8ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:48:52', 'Maquinas Viales', '2010-03-03 22:48:52')[0m
+  [4;36;1mCategoria Create (0.8ms)[0m   [0;1mINSERT INTO "categorias" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:48:52', 'Apiladores Electricos', '2010-03-03 22:48:52')[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (7.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+Migrating to CreateCategorias (20100228180851)
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+Migrating to CreateProductos (20100228184715)
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228184715')[0m
+Migrating to CreateOperaciones (20100228185419)
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228185419')[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("categorias")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("categorias_tipos")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("operaciones")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("productos")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mOperacion Create (1.6ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:49:41', '2010-03-03 22:49:41', 'Alquiler')[0m
+  [4;35;1mOperacion Create (1.8ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:49:41', '2010-03-03 22:49:41', 'Venta')[0m
+  [4;36;1mTipo Create (0.9ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:49:41', 'Apiladores', '2010-03-03 22:49:41')[0m
+  [4;35;1mTipo Create (0.8ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:49:41', 'Maquinas Viales', '2010-03-03 22:49:41')[0m
+  [4;36;1mCategoria Create (0.8ms)[0m   [0;1mINSERT INTO "categorias" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:49:41', 'Apiladores Electricos', '2010-03-03 22:49:41')[0m
+  [4;36;1mOperacion Create (1.7ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:50:05', '2010-03-03 22:50:05', 'Alquiler')[0m
+  [4;35;1mOperacion Create (0.7ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:50:05', '2010-03-03 22:50:05', 'Venta')[0m
+  [4;36;1mTipo Create (0.8ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:50:05', 'Apiladores', '2010-03-03 22:50:05')[0m
+  [4;35;1mTipo Create (0.8ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:50:05', 'Maquinas Viales', '2010-03-03 22:50:05')[0m
+  [4;36;1mCategoria Create (0.8ms)[0m   [0;1mINSERT INTO "categorias" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:50:05', 'Apiladores Electricos', '2010-03-03 22:50:05')[0m
+  [4;36;1mTipo Create (1.8ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:51:16', 'Apiladores', '2010-03-03 22:51:16')[0m
+  [4;35;1mCategoria Create (1.5ms)[0m   [0mINSERT INTO "categorias" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:51:26', 'Apiladores Electricos', '2010-03-03 22:51:26')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO "categorias_tipos" ("tipo_id", "categoria_id") VALUES (5, 3)[0m
+  [4;35;1mCategoria Load (1.7ms)[0m   [0mSELECT * FROM "categorias" INNER JOIN "categorias_tipos" ON "categorias".id = "categorias_tipos".categoria_id WHERE ("categorias_tipos".tipo_id = 5 ) [0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (8.9ms)[0m   [0;1mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (8.5ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (8.7ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228185419')[0m
+  [4;35;1mSQL (9.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100221172423')[0m
+  [4;36;1mSQL (6.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20000127172030')[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100228142338')[0m
+  [4;36;1mSQL (6.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228181157')[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100228180851')[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228184715')[0m
+  [4;35;1mOperacion Create (0.9ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:52:27', '2010-03-03 22:52:27', 'Alquiler')[0m
+  [4;36;1mOperacion Create (0.8ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:52:27', '2010-03-03 22:52:27', 'Venta')[0m
+  [4;35;1mTipo Create (0.8ms)[0m   [0mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:52:27', 'Apiladores', '2010-03-03 22:52:27')[0m
+  [4;36;1mTipo Create (0.7ms)[0m   [0;1mINSERT INTO "tipos" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:52:27', 'Maquinas Viales', '2010-03-03 22:52:27')[0m
+  [4;35;1mCategoria Create (0.9ms)[0m   [0mINSERT INTO "categorias" ("created_at", "nombre", "updated_at") VALUES('2010-03-03 22:52:27', 'Apiladores Electricos', '2010-03-03 22:52:27')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "categorias_tipos" ("tipo_id", "categoria_id") VALUES (1, 1)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (13.2ms)[0m   [0;1mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;35;1mSQL (1.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.3ms)[0m   [0;1mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.1ms)[0m   [0;1mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.3ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.7ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228185419')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100221172423')[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20000127172030')[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100228142338')[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228181157')[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100228180851')[0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100228184715')[0m
+  [4;35;1mOperacion Create (0.9ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:55:22', '2010-03-03 22:55:22', 'Alquiler')[0m
+  [4;36;1mOperacion Create (0.8ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:55:22', '2010-03-03 22:55:22', 'Venta')[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (14.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (7.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTbPlantillas (20000127172030)
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "tb_plantillas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20000127172030')[0m
+Migrating to CreateUsuarios (20100221172423)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100221172423')[0m
+Migrating to CreateTipos (20100228142338)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "tipos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ti_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228142338')[0m
+Migrating to CreateCategorias (20100228180851)
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "categorias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "cat_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100228180851')[0m
+Migrating to CategoriasTipos (20100228181157)
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "categorias_tipos" ("categoria_id" integer NOT NULL, "tipo_id" integer NOT NULL) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228181157')[0m
+Migrating to CreateProductos (20100228184715)
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categoria_id" integer, "operacion_id" integer, "modelo" varchar(255), "detalle" text, "precio" integer, "imagen" varchar(255), "habilitado" integer, "imagen_file_name" varchar(255), "imagen_content_type" varchar(255), "imagen_file_size" integer, "imagen_updated_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228184715')[0m
+Migrating to CreateOperaciones (20100228185419)
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "operaciones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_nombre" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100228185419')[0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("categorias")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("categorias_tipos")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("operaciones")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("productos")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (4.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("categorias")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("categorias_tipos")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("operaciones")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("productos")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("tb_plantillas")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("tipos")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("usuarios")[0m
+  [4;36;1mOperacion Create (2.1ms)[0m   [0;1mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:57:02', '2010-03-03 22:57:02', 'Alquiler')[0m
+  [4;35;1mOperacion Create (0.9ms)[0m   [0mINSERT INTO "operaciones" ("created_at", "updated_at", "op_nombre") VALUES('2010-03-03 22:57:02', '2010-03-03 22:57:02', 'Venta')[0m
+  [4;36;1mTipo Create (1.1ms)[0m   [0;1mINSERT INTO "tipos" ("ti_nombre", "created_at", "updated_at") VALUES('Apiladores', '2010-03-03 22:57:02', '2010-03-03 22:57:02')[0m
+  [4;35;1mTipo Create (0.8ms)[0m   [0mINSERT INTO "tipos" ("ti_nombre", "created_at", "updated_at") VALUES('Maquinas Viales', '2010-03-03 22:57:02', '2010-03-03 22:57:02')[0m
+  [4;36;1mCategoria Create (1.0ms)[0m   [0;1mINSERT INTO "categorias" ("cat_nombre", "created_at", "updated_at") VALUES('Apiladores Electricos', '2010-03-03 22:57:02', '2010-03-03 22:57:02')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "categorias_tipos" ("tipo_id", "categoria_id") VALUES (1, 1)[0m
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-03 22:59:57) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;36;1mUsuario Load (0.7ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+Completed in 313ms (View: 301, DB: 1) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:00:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-03 23:00:35) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;36;1mUsuario Load (0.7ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.6ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+Completed in 129ms (View: 116, DB: 1) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:00:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-03 23:00:37) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;36;1mUsuario Load (0.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.6ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+Completed in 102ms (View: 88, DB: 1) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:00:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-03 23:00:41) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mUsuario Load (0.8ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+Completed in 139ms (View: 65, DB: 1) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:00:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#new (for 192.168.3.1 at 2010-03-03 23:00:49) [GET]
+Rendering template within layouts/application
+Rendering usuarios/new
+Rendered usuarios/_usuario (27.5ms)
+  [4;36;1mUsuario Load (0.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.6ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+Completed in 155ms (View: 96, DB: 1) | 200 OK [http://192.168.3.128/usuarios/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:00:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#new (for 192.168.3.1 at 2010-03-03 23:02:56) [GET]
+Rendering template within layouts/application
+Rendering usuarios/new
+Rendered usuarios/_usuario (57.1ms)
+  [4;36;1mUsuario Load (0.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+Completed in 164ms (View: 109, DB: 1) | 200 OK [http://192.168.3.128/usuarios/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:02:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#create (for 192.168.3.1 at 2010-03-03 23:03:09) [POST]
+  Parameters: {"commit"=>"Create Usuario", "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0=", "usuario"=>{"password_confirmation"=>"nchavez", "username"=>"nchavez", "password"=>"nchavez", "email"=>"nahuel.chaves@gmail.com"}}
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."email") = 'nahuel.chaves@gmail.com') LIMIT 1[0m
+  [4;35;1mUsuario Load (0.4ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE (LOWER("usuarios"."username") = 'nchavez') LIMIT 1[0m
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."persistence_token" = '712087b3d9417c6313aae3a090fe0eae84753c2441f80a82915926d53af1ba68d6439701ffc683530b7d501103aa3c3a506b1ed93aee24afca347f3caaa38bd1') LIMIT 1[0m
+  [4;35;1mUsuario Create (1.9ms)[0m   [0mINSERT INTO "usuarios" ("created_at", "crypted_password", "updated_at", "username", "password_salt", "persistence_token", "email") VALUES('2010-03-03 23:03:09', 'c77213682f2b8e2b083f0334f443ab1ab03dfdbd1d7f321eeadd738c542bc641cc18483db16f61a3294314f029fc434bf790365763a160977b2bd5321654e246', '2010-03-03 23:03:09', 'nchavez', 'U7kLDP6EAIjLVx-MCFup', '712087b3d9417c6313aae3a090fe0eae84753c2441f80a82915926d53af1ba68d6439701ffc683530b7d501103aa3c3a506b1ed93aee24afca347f3caaa38bd1', 'nahuel.chaves@gmail.com')[0m
+Redirected to http://192.168.3.128:3000/
+Completed in 100ms (DB: 3) | 302 Found [http://192.168.3.128/usuarios]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-03 23:03:10) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;36;1mUsuario Load (1.4ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+  [4;35;1mUsuario Load (1.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+Completed in 101ms (View: 87, DB: 3) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:03:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-03 23:03:13) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mUsuario Load (1.7ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+  [4;35;1mUsuario Load (1.4ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+Completed in 142ms (View: 68, DB: 3) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:03:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-03 23:03:18) [POST]
+  Parameters: {"user_session"=>{"username"=>"nchavez", "password"=>"nchavez"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'nchavez') LIMIT 1[0m
+Rendering user_sessions/create
+Completed in 89ms (View: 2, DB: 2) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-03 23:03:18) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;35;1mUsuario Load (1.4ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 101ms (View: 87, DB: 1) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:03:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-03 23:03:22) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-03 23:04:36) [GET]
+Rendering template within layouts/application
+Rendering productos/index
+  [4;36;1mUsuario Load (1.5ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 322ms (View: 309, DB: 2) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:04:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-03 23:05:41) [GET]
+  [4;35;1mProducto Load (1.9ms)[0m   [0mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;36;1mUsuario Load (1.4ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 324ms (View: 274, DB: 3) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:05:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-03 23:08:34) [GET]
+  [4;35;1mProducto Load (2.3ms)[0m   [0mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;35;1mUsuario Load (1.4ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 141ms (View: 109, DB: 4) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:08:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-03 23:08:46) [GET]
+  [4;36;1mProducto Load (2.4ms)[0m   [0;1mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;36;1mUsuario Load (1.5ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 154ms (View: 120, DB: 5) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:08:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-03 23:09:44) [GET]
+  [4;35;1mProducto Load (2.1ms)[0m   [0mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;35;1mUsuario Load (1.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 164ms (View: 130, DB: 4) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:09:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-03 23:09:48) [GET]
+
+ActionController::UnknownAction (No action responded to new. Actions: index):
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-03 23:10:52) [GET]
+
+ActionView::MissingTemplate (Missing template productos/new.erb in view path app/views:vendor/plugins/trevorrowe-tinymce_hammer-763740e/app/views):
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-03 23:11:01) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mUsuario Load (1.9ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 192ms (View: 142, DB: 2) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:11:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#edit (for 192.168.3.1 at 2010-03-03 23:13:42) [GET]
+  Parameters: {"id"=>"current"}
+  [4;35;1mUsuario Load (1.6ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering usuarios/edit
+Rendered usuarios/_usuario (50.7ms)
+Completed in 177ms (View: 84, DB: 2) | 200 OK [http://192.168.3.128/usuarios/current/edit]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:13:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#edit (for 192.168.3.1 at 2010-03-03 23:14:55) [GET]
+  Parameters: {"id"=>"current"}
+  [4;36;1mUsuario Load (1.8ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering usuarios/edit
+Rendered usuarios/_usuario (51.3ms)
+Completed in 174ms (View: 80, DB: 2) | 200 OK [http://192.168.3.128/usuarios/current/edit]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:14:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#edit (for 192.168.3.1 at 2010-03-03 23:16:57) [GET]
+  Parameters: {"id"=>"current"}
+  [4;35;1mUsuario Load (1.8ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering usuarios/edit
+Rendered usuarios/_usuario (569.4ms)
+Completed in 1222ms (View: 1130, DB: 2) | 200 OK [http://192.168.3.128/usuarios/current/edit]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:16:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#edit (for 192.168.3.1 at 2010-03-03 23:17:41) [GET]
+  Parameters: {"id"=>"current"}
+  [4;36;1mUsuario Load (1.5ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering usuarios/edit
+Rendered usuarios/_usuario (53.5ms)
+Completed in 171ms (View: 83, DB: 2) | 200 OK [http://192.168.3.128/usuarios/current/edit]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:17:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-03 23:18:44) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mUsuario Load (1.6ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 135ms (View: 91, DB: 2) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:18:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-03 23:19:36) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+Rendered productos/_producto (4.1ms)
+  [4;36;1mUsuario Load (2.3ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 166ms (View: 121, DB: 2) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-03 23:19:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-03 23:21:23) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+ERROR: compiling _run_erb_app47views47productos47_producto46html46erb_locals_object_producto RAISED compile error
+/opt/bitnami/projects/rb_ferracur/app/views/productos/_producto.html.erb:1: syntax error, unexpected ')'
+... => "form_productos"} do |f| ).to_s); @output_buffer.concat ...
+                              ^
+/opt/bitnami/projects/rb_ferracur/app/views/productos/_producto.html.erb:5: syntax error, unexpected kENSURE, expecting ')'
+/opt/bitnami/projects/rb_ferracur/app/views/productos/_producto.html.erb:7: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47productos47_producto46html46erb_locals_object_producto(local_assigns)
+            old_output_buffer = output_buffer;producto = local_assigns[:producto];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( semantic_form_for @producto, :html => {:id => "form_productos"} do |f| ).to_s); @output_buffer.concat "\r\n    "
+; @output_buffer.concat(( f.inputs ).to_s); @output_buffer.concat "\r\n    "
+; @output_buffer.concat(( f.buttons ).to_s); @output_buffer.concat "\r\n"
+;  end ; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /opt/bitnami/projects/rb_ferracur/app/views/productos/_producto.html.erb:7:in `compile!'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:20:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:19:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:184:in `render_partial'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/partials.rb:201:in `render_partial'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:276:in `render_without_haml'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/haml-2.2.20/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/bitnami/projects/rb_ferracur/app/views/productos/new.html.erb:1:in `_run_erb_app47views47productos47new46html46erb'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `send'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:34:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:306:in `with_template'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:30:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render_without_haml'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/haml-2.2.20/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render_without_haml'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/haml-2.2.20/lib/haml/helpers/action_view_mods.rb:13:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `sass_old_process'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/haml-2.2.20/lib/sass/plugin/rails.rb:20:in `process_without_compass'
+/opt/bitnami/projects/rb_ferracur/vendor/gems/compass-0.8.17/lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/opt/bitnami/ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/bitnami/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/bitnami/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/opt/bitnami/projects/rb_ferracur/app/views/productos/_producto.html.erb:1: syntax error, unexpected ')'
+... => "form_productos"} do |f| ).to_s); @output_buffer.concat ...
+                              ^
+/opt/bitnami/projects/rb_ferracur/app/views/productos/_producto.html.erb:5: syntax error, unexpected kENSURE, expecting ')'
+/opt/bitnami/projects/rb_ferracur/app/views/productos/_producto.html.erb:7: syntax error, unexpected kEND, expecting ')') on line #1 of app/views/productos/_producto.html.erb:
+1: <%= semantic_form_for @producto, :html => {:id => "form_productos"} do |f| %>
+2:     <%= f.inputs %>
+3:     <%= f.buttons %>
+4: <% end %>
+
+    app/views/productos/_producto.html.erb:7:in `compile!'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/productos/new.html.erb:1
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (200.9ms)
+Rendered rescues/_request_and_response (5.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 00:28:42) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (3.7ms)[0m   [0mSELECT * FROM "categorias" [0m
+  [4;36;1mOperacion Load (1.8ms)[0m   [0;1mSELECT * FROM "operaciones" [0m
+Rendered productos/_producto (302.5ms)
+  [4;35;1mUsuario Load (1.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 469ms (View: 415, DB: 7) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 00:28:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 00:29:49) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+Rendered productos/_producto (52.3ms)
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 237ms (View: 152, DB: 2) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 00:29:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 00:30:14) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+Rendered productos/_producto (43.9ms)
+  [4;35;1mUsuario Load (1.7ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 177ms (View: 133, DB: 2) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 00:30:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 00:32:49) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+
+ActionView::TemplateError (undefined method `categorias' for #<Producto:0xb4ef4a98>) on line #4 of app/views/productos/_producto.html.erb:
+1: <% semantic_form_for @producto, :html => {:id => "form_productos"} do |f| %>
+2:     <%f.inputs do %>
+3:         <%= f.input :modelo %>
+4:         <%= f.input :categorias %>
+5:     <% end %>
+6:     <%= f.buttons %>
+7: <% end %>
+
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:565:in `send'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:565:in `basic_input_helper'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:570:in `string_input'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1205:in `send'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1205:in `inline_input_for'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:99:in `send'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:99:in `input'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:98:in `map'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:98:in `input'
+    app/views/productos/_producto.html.erb:4
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:90:in `capture'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1288:in `field_set_and_list_wrapping'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:260:in `inputs'
+    app/views/productos/_producto.html.erb:2
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1723:in `semantic_form_for'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1701:in `with_custom_field_error_proc'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1722:in `semantic_form_for'
+    app/views/productos/_producto.html.erb:1
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/productos/new.html.erb:1
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (314.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 00:33:41) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.1ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (81.3ms)
+  [4;35;1mUsuario Load (1.8ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 246ms (View: 177, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 00:33:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 00:35:55) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.0ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (76.9ms)
+  [4;35;1mUsuario Load (1.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 212ms (View: 165, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 00:35:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mCategoria Load (4.3ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 00:44:27) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.0ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (76.2ms)
+  [4;35;1mUsuario Load (1.4ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 202ms (View: 154, DB: 2) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 00:44:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 00:44:48) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.3ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (164.3ms)
+  [4;35;1mUsuario Load (5.1ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 650ms (View: 584, DB: 6) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 00:44:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 00:47:03) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.3ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (128.1ms)
+  [4;35;1mUsuario Load (1.8ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 520ms (View: 469, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 00:47:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:15:56) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.2ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (80.7ms)
+  [4;35;1mUsuario Load (1.8ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 211ms (View: 161, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:15:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:16:20) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.1ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (76.2ms)
+  [4;35;1mUsuario Load (1.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 235ms (View: 159, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:16:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#destroy (for 192.168.3.1 at 2010-03-04 01:16:23) [GET]
+  [4;36;1mUsuario Load (1.7ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Redirected to http://192.168.3.128:3000/
+Completed in 99ms (DB: 2) | 302 Found [http://192.168.3.128/logout]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-04 01:16:23) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+Completed in 110ms (View: 97, DB: 0) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:16:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 192.168.3.1 at 2010-03-04 01:16:26) [GET]
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 159ms (View: 82, DB: 0) | 200 OK [http://192.168.3.128/login]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:16:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#create (for 192.168.3.1 at 2010-03-04 01:16:32) [POST]
+  Parameters: {"user_session"=>{"username"=>"nchavez", "password"=>"nchavez"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+  [4;35;1mUsuario Load (3.1ms)[0m   [0mSELECT * FROM "usuarios" WHERE (LOWER("usuarios".username) = 'nchavez') LIMIT 1[0m
+Rendering user_sessions/create
+Completed in 388ms (View: 17, DB: 3) | 200 OK [http://192.168.3.128/user_sessions]
+
+
+Processing PrincipalController#index (for 192.168.3.1 at 2010-03-04 01:16:33) [GET]
+Rendering template within layouts/application
+Rendering principal/index
+  [4;36;1mUsuario Load (1.7ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 115ms (View: 100, DB: 2) | 200 OK [http://192.168.3.128/]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:16:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:16:37) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.1ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (75.0ms)
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 205ms (View: 156, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:16:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:25:41) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.2ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (93.9ms)
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 236ms (View: 186, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:25:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:26:40) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.1ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (80.5ms)
+  [4;36;1mUsuario Load (2.1ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 228ms (View: 182, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:26:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:26:58) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.1ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (84.9ms)
+  [4;36;1mUsuario Load (1.5ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 227ms (View: 179, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:26:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:28:01) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.2ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (87.5ms)
+  [4;36;1mUsuario Load (1.4ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 238ms (View: 188, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:28:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:28:56) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.4ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (86.9ms)
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 217ms (View: 168, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:28:57) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.2ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (76.5ms)
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 198ms (View: 153, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:28:58) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.0ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (82.8ms)
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 214ms (View: 168, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:29:46) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.7ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (85.5ms)
+  [4;36;1mUsuario Load (1.7ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 226ms (View: 178, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:29:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:31:14) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.1ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (84.8ms)
+  [4;36;1mUsuario Load (2.0ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 220ms (View: 174, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:31:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:32:30) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (2.2ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (81.6ms)
+  [4;36;1mUsuario Load (1.5ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 216ms (View: 170, DB: 4) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:32:31) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:37:56) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.1ms)[0m   [0mSELECT * FROM "categorias" [0m
+
+ActionView::TemplateError (undefined method `file' for #<Formtastic::SemanticFormBuilder:0xb4dfa084>) on line #7 of app/views/productos/_producto.html.erb:
+4:         <%= f.input :categoria, :include_blank => false %>
+5:         <%= f.input :modelo %>
+6:         <%= f.input :precio, :input_html => {:size => 20, :style => "width:auto;"}%>
+7:         <%= f.file :imagen %>
+8:     <% end %>
+9:     <%= f.buttons %>
+10: <% end %>
+
+    app/views/productos/_producto.html.erb:7
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:90:in `capture'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1288:in `field_set_and_list_wrapping'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:260:in `inputs'
+    app/views/productos/_producto.html.erb:2
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1723:in `semantic_form_for'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1701:in `with_custom_field_error_proc'
+    vendor/plugins/formtastic/rails/./lib/formtastic.rb:1722:in `semantic_form_for'
+    app/views/productos/_producto.html.erb:1
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/productos/new.html.erb:1
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (522.1ms)
+Rendered rescues/_request_and_response (6.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:40:14) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.1ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (88.7ms)
+  [4;35;1mUsuario Load (1.7ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 238ms (View: 182, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:40:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#create (for 192.168.3.1 at 2010-03-04 01:43:06) [POST]
+  Parameters: {"commit"=>"Create Producto", "producto"=>{"imagen"=>"", "precio"=>"", "modelo"=>"", "categoria_id"=>"1"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+
+ActionController::UnknownAction (No action responded to create. Actions: index and new):
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#create (for 192.168.3.1 at 2010-03-04 01:44:43) [POST]
+  Parameters: {"commit"=>"Create Producto", "producto"=>{"imagen"=>"", "precio"=>"", "modelo"=>"", "categoria_id"=>"1"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/productos_controller.rb:9:in `[]'
+  app/controllers/productos_controller.rb:9:in `create'
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (392.0ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:47:15) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.5ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (82.9ms)
+  [4;35;1mUsuario Load (1.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 204ms (View: 159, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:47:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#create (for 192.168.3.1 at 2010-03-04 01:47:17) [POST]
+  Parameters: {"commit"=>"Create Producto", "producto"=>{"imagen"=>"", "precio"=>"", "modelo"=>"", "categoria_id"=>"1"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+  [4;36;1mProducto Create (2.0ms)[0m   [0;1mINSERT INTO "productos" ("detalle", "imagen", "created_at", "habilitado", "imagen_content_type", "updated_at", "precio", "imagen_file_name", "imagen_file_size", "imagen_updated_at", "operacion_id", "modelo", "categoria_id") VALUES(NULL, NULL, '2010-03-04 01:47:17', NULL, NULL, '2010-03-04 01:47:17', NULL, NULL, NULL, NULL, NULL, '', 1)[0m
+[paperclip] Saving attachments.
+Redirected to http://192.168.3.128:3000/productos
+Completed in 470ms (DB: 2) | 302 Found [http://192.168.3.128/productos]
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-04 01:47:18) [GET]
+  [4;35;1mProducto Load (3.1ms)[0m   [0mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;35;1mUsuario Load (1.5ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 364ms (View: 330, DB: 6) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:47:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#edit (for 192.168.3.1 at 2010-03-04 01:47:25) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to edit. Actions: create, index, and new):
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#destroy (for 192.168.3.1 at 2010-03-04 01:47:30) [DELETE]
+  Parameters: {"authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0=", "id"=>"1"}
+
+ActionController::UnknownAction (No action responded to destroy. Actions: create, index, and new):
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#destroy (for 192.168.3.1 at 2010-03-04 01:48:51) [DELETE]
+  Parameters: {"authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0=", "id"=>"1"}
+  [4;36;1mProducto Load (1.8ms)[0m   [0;1mSELECT * FROM "productos" WHERE ("productos"."id" = 1) [0m
+[paperclip] Deleting attachments.
+  [4;35;1mProducto Destroy (0.9ms)[0m   [0mDELETE FROM "productos" WHERE "id" = 1[0m
+
+ActionView::MissingTemplate (Missing template productos/destroy.erb in view path app/views:vendor/plugins/trevorrowe-tinymce_hammer-763740e/app/views):
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-04 01:49:09) [GET]
+  [4;36;1mProducto Load (2.9ms)[0m   [0;1mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;36;1mUsuario Load (2.1ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 159ms (View: 119, DB: 6) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:49:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TbPlantillasController#new (for 192.168.3.1 at 2010-03-04 01:49:13) [GET]
+Rendering template within layouts/application
+Rendering tb_plantillas/new
+
+ActionView::TemplateError (undefined method `pl_codigo' for #<TbPlantilla id: nil, created_at: nil, updated_at: nil>) on line #14 of app/views/tb_plantillas/_tb_plantilla.html.erb:
+11:     <div id="errores"></div>
+12:     <p>
+13:       <%= f.label :pl_codigo, "Codigo"%>
+14:       <%= f.text_field :pl_codigo, :class => "text"%>
+15:     </p>
+16:     <p>
+17:       <%= f.label :pl_descripcion, "Descripcion"%>
+
+    app/views/tb_plantillas/_tb_plantilla.html.erb:14
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    app/views/tb_plantillas/_tb_plantilla.html.erb:10
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/views/tb_plantillas/new.html.erb:1
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+    compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendered rescues/_trace (287.0ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:49:19) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.2ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (100.8ms)
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 466ms (View: 188, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:49:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#create (for 192.168.3.1 at 2010-03-04 01:49:22) [POST]
+  Parameters: {"commit"=>"Create Producto", "producto"=>{"imagen"=>"", "precio"=>"", "modelo"=>"", "categoria_id"=>"1"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+  [4;35;1mProducto Create (1.1ms)[0m   [0mINSERT INTO "productos" ("detalle", "imagen", "created_at", "habilitado", "imagen_content_type", "updated_at", "precio", "imagen_file_name", "imagen_file_size", "imagen_updated_at", "operacion_id", "modelo", "categoria_id") VALUES(NULL, NULL, '2010-03-04 01:49:22', NULL, NULL, '2010-03-04 01:49:22', NULL, NULL, NULL, NULL, NULL, '', 1)[0m
+[paperclip] Saving attachments.
+Redirected to http://192.168.3.128:3000/productos
+Completed in 293ms (DB: 1) | 302 Found [http://192.168.3.128/productos]
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-04 01:49:23) [GET]
+  [4;36;1mProducto Load (3.7ms)[0m   [0;1mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;36;1mUsuario Load (1.5ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 188ms (View: 150, DB: 6) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:49:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#destroy (for 192.168.3.1 at 2010-03-04 01:49:26) [DELETE]
+  Parameters: {"authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0=", "id"=>"2"}
+  [4;35;1mProducto Load (2.8ms)[0m   [0mSELECT * FROM "productos" WHERE ("productos"."id" = 2) [0m
+[paperclip] Deleting attachments.
+  [4;36;1mProducto Destroy (0.7ms)[0m   [0;1mDELETE FROM "productos" WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering productos/destroy
+  [4;35;1mUsuario Load (1.7ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 201ms (View: 120, DB: 5) | 200 OK [http://192.168.3.128/productos/2]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:49:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:49:50) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;36;1mCategoria Load (1.0ms)[0m   [0;1mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (89.4ms)
+  [4;35;1mUsuario Load (1.4ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 222ms (View: 172, DB: 2) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:49:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#create (for 192.168.3.1 at 2010-03-04 01:50:03) [POST]
+  Parameters: {"commit"=>"Create Producto", "producto"=>{"imagen"=>"2986977325_1287865db3_o.jpg", "precio"=>"234234", "modelo"=>"ASdasdasd", "categoria_id"=>"1"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+  [4;36;1mProducto Create (1.2ms)[0m   [0;1mINSERT INTO "productos" ("detalle", "imagen", "created_at", "habilitado", "imagen_content_type", "updated_at", "precio", "imagen_file_name", "imagen_file_size", "imagen_updated_at", "operacion_id", "modelo", "categoria_id") VALUES(NULL, NULL, '2010-03-04 01:50:03', NULL, NULL, '2010-03-04 01:50:03', 234234, NULL, NULL, NULL, NULL, 'ASdasdasd', 1)[0m
+[paperclip] Saving attachments.
+Redirected to http://192.168.3.128:3000/productos
+Completed in 94ms (DB: 1) | 302 Found [http://192.168.3.128/productos]
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-04 01:50:04) [GET]
+  [4;35;1mProducto Load (3.4ms)[0m   [0mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;35;1mUsuario Load (1.6ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 174ms (View: 135, DB: 6) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:50:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#edit (for 192.168.3.1 at 2010-03-04 01:50:08) [GET]
+  Parameters: {"id"=>"3"}
+
+ActionController::UnknownAction (No action responded to edit. Actions: create, destroy, index, and new):
+  haml (2.2.20) lib/sass/plugin/rails.rb:20:in `process_without_compass'
+  compass (0.8.17) [v] lib/compass/app_integration/rails/action_controller.rb:7:in `process'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#edit (for 192.168.3.1 at 2010-03-04 01:50:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mProducto Load (2.6ms)[0m   [0;1mSELECT * FROM "productos" WHERE ("productos"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering productos/edit
+  [4;35;1mCategoria Load (35.9ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (281.0ms)
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 449ms (View: 364, DB: 40) | 200 OK [http://192.168.3.128/productos/3/edit]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:50:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-04 01:53:40) [GET]
+  [4;35;1mProducto Load (3.8ms)[0m   [0mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;35;1mUsuario Load (2.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 429ms (View: 382, DB: 7) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:53:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#destroy (for 192.168.3.1 at 2010-03-04 01:53:43) [DELETE]
+  Parameters: {"authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0=", "id"=>"3"}
+  [4;36;1mProducto Load (1.8ms)[0m   [0;1mSELECT * FROM "productos" WHERE ("productos"."id" = 3) [0m
+[paperclip] Deleting attachments.
+  [4;35;1mProducto Destroy (1.0ms)[0m   [0mDELETE FROM "productos" WHERE "id" = 3[0m
+Redirected to http://192.168.3.128:3000/productos
+Completed in 76ms (DB: 3) | 302 Found [http://192.168.3.128/productos/3]
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-04 01:53:44) [GET]
+  [4;36;1mProducto Load (1.9ms)[0m   [0;1mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;36;1mUsuario Load (1.6ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 146ms (View: 109, DB: 4) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:53:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#new (for 192.168.3.1 at 2010-03-04 01:53:47) [GET]
+Rendering template within layouts/application
+Rendering productos/new
+  [4;35;1mCategoria Load (1.1ms)[0m   [0mSELECT * FROM "categorias" [0m
+Rendered productos/_producto (100.7ms)
+  [4;36;1mUsuario Load (1.8ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 239ms (View: 194, DB: 3) | 200 OK [http://192.168.3.128/productos/new]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:53:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProductosController#create (for 192.168.3.1 at 2010-03-04 01:53:56) [POST]
+  Parameters: {"commit"=>"Create Producto", "producto"=>{"imagen"=>#<File:/tmp/RackMultipart20100304-13002-j126lx-0>, "precio"=>"33", "modelo"=>"asdasd", "categoria_id"=>"1"}, "authenticity_token"=>"Uq2BfJfsh298eZ2LMvvVAiON6zS5MHDfkM2Yscp30X0="}
+  [4;35;1mProducto Create (2.6ms)[0m   [0mINSERT INTO "productos" ("detalle", "imagen", "created_at", "habilitado", "imagen_content_type", "updated_at", "precio", "imagen_file_name", "imagen_file_size", "imagen_updated_at", "operacion_id", "modelo", "categoria_id") VALUES(NULL, NULL, '2010-03-04 01:54:23', NULL, 'image/jpeg', '2010-03-04 01:54:23', 33, '2986977325_1287865db3_o.jpg', 1903360, '2010-03-04 01:53:56', NULL, 'asdasd', 1)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /opt/bitnami/projects/rb_ferracur/public/system/imagenes/4/thumb/2986977325_1287865db3_o.jpg
+[paperclip] saving /opt/bitnami/projects/rb_ferracur/public/system/imagenes/4/original/2986977325_1287865db3_o.jpg
+[paperclip] saving /opt/bitnami/projects/rb_ferracur/public/system/imagenes/4/medium/2986977325_1287865db3_o.jpg
+Redirected to http://192.168.3.128:3000/productos
+Completed in 27200ms (DB: 3) | 302 Found [http://192.168.3.128/productos]
+
+
+Processing ProductosController#index (for 192.168.3.1 at 2010-03-04 01:54:24) [GET]
+  [4;36;1mProducto Load (3.3ms)[0m   [0;1mSELECT * FROM "productos" LIMIT 10 OFFSET 0[0m
+Rendering template within layouts/application
+Rendering productos/index
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "productos" [0m
+  [4;36;1mUsuario Load (1.7ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = '1') LIMIT 1[0m
+Completed in 173ms (View: 135, DB: 6) | 200 OK [http://192.168.3.128/productos]
+
+
+Processing ApplicationController#index (for 192.168.3.1 at 2010-03-04 01:54:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/formtastic-changes.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

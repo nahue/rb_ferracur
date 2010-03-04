@@ -1,4 +1,5 @@
-<% form_for @usuario, :html => {:class => "usuarios"} do |form| %>  
+<!--
+<% form_for @usuario, :html => {:class => "usuarios"} do |form| %>
 <%= form.error_messages %>
 
   <p>
@@ -21,4 +22,10 @@
     <%= form.submit "Enviar" %>
   </p>
 
+<% end %>
+-->
+
+<% semantic_form_for @usuario, :html => {:id => "form_usuarios"} do |f|  %>
+  <%= f.inputs :username, :email, :password, :password_confirmation %>
+  <%= f.buttons %>
 <% end %>

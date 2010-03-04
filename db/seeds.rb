@@ -5,7 +5,13 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
-Operacion.create(:op_nombre => "Alquiler")
-Operacion.create(:op_nombre => "Venta")
-Tipo.create(:nombre => "Apiladores")
-Tipo.create(:nombre => "Maquinas Viales")
+alquiler = Operacion.create(:op_nombre => "Alquiler")
+venta = Operacion.create(:op_nombre => "Venta")
+apiladores = Tipo.create(:ti_nombre => "Apiladores")
+maquinas_viales = Tipo.create(:ti_nombre => "Maquinas Viales")
+apiladores_electricos = Categoria.create(:cat_nombre => "Apiladores Electricos")
+
+
+# Relaciones
+
+apiladores.categorias << apiladores_electricos

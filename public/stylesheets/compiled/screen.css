@@ -16,7 +16,10 @@
 
 form.productos { width: 80%; margin: 0 auto; margin-top: 50px; }
 
+form { text-align: left; }
 form#new_user_session { width: 340px; margin: 0 auto; margin-top: 50px; }
+form#form_usuarios { width: 340px; margin: 0 auto; margin-top: 50px; }
+form#form_productos { width: 500px; margin: 0 auto; margin-top: 50px; }
 
 form.usuarios { width: 40%; margin: 0 auto; margin-top: 50px; }
 
